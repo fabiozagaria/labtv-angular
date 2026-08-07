@@ -1,18 +1,28 @@
-# LabTV
+# LabTV — Catalogo cinematografico Angular
 
-Applicazione Angular dedicata alla scoperta di film. Integra la TMDB API per mostrare catalogo, ricerca, dettagli, cast, regista e titoli simili.
+Single Page Application dedicata alla scoperta di film. Integra la TMDB API per mostrare catalogo, ricerca, dettagli, cast, regista e titoli simili.
 
-[Demo live](https://lab-tv.vercel.app/)
+[Demo online](https://lab-tv.vercel.app/)
+
+## Competenze dimostrate
+
+- integrazione di una REST API esterna;
+- gestione asincrona dei dati con HttpClient e RxJS;
+- modelli TypeScript per risposte API tipizzate;
+- gestione degli stati di caricamento ed errore;
+- routing con parametri dinamici;
+- componenti riutilizzabili;
+- stato locale con Angular Signals.
 
 ## Funzionalità
 
-- catalogo di film recuperato tramite richieste HTTP;
-- ricerca locale per titolo con aggiornamento reattivo dei risultati;
-- pagina di dettaglio con informazioni del film, cast e regista;
+- catalogo di film recuperato dalla TMDB API;
+- ricerca locale per titolo;
+- pagina di dettaglio del film;
+- visualizzazione di cast e regista;
 - suggerimenti di film simili;
-- gestione esplicita degli stati di caricamento e degli errori;
-- navigazione tramite Angular Router;
-- interfaccia responsive basata su Bootstrap.
+- messaggi dedicati per caricamento ed errore;
+- navigazione tra home, catalogo, ricerca, contatti e dettaglio.
 
 ## Tecnologie
 
@@ -20,30 +30,17 @@ Applicazione Angular dedicata alla scoperta di film. Integra la TMDB API per mos
 - TypeScript 5.9
 - RxJS
 - Angular Signals
-- Angular Router e HttpClient
+- Angular Router
+- Angular HttpClient
 - Bootstrap 5 e Bootstrap Icons
 - TMDB API
-- Vitest
+- Vitest come test runner configurato
 
-## Struttura applicativa
+## Architettura
 
-```text
-src/app
-├── components
-│   ├── catalogo
-│   ├── contatti
-│   ├── login
-│   ├── movie-card
-│   ├── movie-detail
-│   └── ricerca
-├── layout
-├── pages
-├── services
-│   └── movie-service.ts
-└── app.routes.ts
-```
+`MovieService` centralizza le chiamate HTTP e restituisce `Observable` tipizzati. I componenti separano catalogo, ricerca, card e dettaglio; Signals mantiene lo stato locale dell'interfaccia.
 
-`MovieService` centralizza l'accesso alla TMDB API attraverso `HttpClient` e restituisce `Observable` tipizzati. I componenti mantengono lo stato locale con Signals e separano catalogo, ricerca, scheda riutilizzabile e dettaglio.
+Le rotte principali sono definite in `app.routes.ts`, mentre i modelli condivisi descrivono film, crediti e risposte della API.
 
 ## Avvio in locale
 
@@ -53,32 +50,28 @@ src/app
 - npm
 
 ```bash
-git clone https://github.com/fabiozagaria/LabTV.git
-cd LabTV
+git clone https://github.com/fabiozagaria/labtv-angular.git
+cd labtv-angular
 npm install
 npm start
 ```
 
 L'applicazione sarà disponibile su `http://localhost:4200`.
 
-## TMDB e sicurezza
+## Nota architetturale sulle credenziali
 
-Le richieste partono da un'applicazione eseguita nel browser. Una credenziale inserita nel bundle frontend deve quindi essere considerata pubblica: spostarla soltanto in un file `environment` Angular non la rende segreta.
+In una SPA, ogni configurazione inclusa nel bundle è accessibile dal browser. In un'applicazione production-ready, le chiamate che richiedono credenziali riservate dovrebbero essere mediate da un backend controllato.
 
-Per un utilizzo reale è opportuno:
+## Limiti attuali
 
-1. non committare chiavi personali;
-2. sostituire qualsiasi chiave già pubblicata;
-3. inoltrare le richieste attraverso un backend controllato, se la credenziale deve rimanere riservata.
-
-## Stato del progetto
-
-Progetto didattico funzionante e in evoluzione. Login e autenticazione reale non sono ancora implementati.
+- il progetto è esclusivamente frontend;
+- la pagina di login è dimostrativa e non implementa autenticazione reale;
+- non è presente persistenza utente.
 
 ## Attribuzione
 
-I dati cinematografici provengono da [The Movie Database](https://www.themoviedb.org/). LabTV è un progetto educativo e non è affiliato a TMDB.
+I dati cinematografici sono forniti da [The Movie Database](https://www.themoviedb.org/). LabTV è un progetto educativo e non è affiliato a TMDB.
 
 ## Autore
 
-Sviluppato da [Fabio Zagaria](https://github.com/fabiozagaria).
+Fabio Zagaria — progetto Angular realizzato durante il percorso LabForWeb.
