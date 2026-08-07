@@ -1,59 +1,84 @@
 # LabTV
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+Applicazione Angular dedicata alla scoperta di film. Integra la TMDB API per mostrare catalogo, ricerca, dettagli, cast, regista e titoli simili.
 
-## Development server
+[Demo live](https://lab-tv.vercel.app/)
 
-To start a local development server, run:
+## Funzionalità
 
-```bash
-ng serve
+- catalogo di film recuperato tramite richieste HTTP;
+- ricerca locale per titolo con aggiornamento reattivo dei risultati;
+- pagina di dettaglio con informazioni del film, cast e regista;
+- suggerimenti di film simili;
+- gestione esplicita degli stati di caricamento e degli errori;
+- navigazione tramite Angular Router;
+- interfaccia responsive basata su Bootstrap.
+
+## Tecnologie
+
+- Angular 21
+- TypeScript 5.9
+- RxJS
+- Angular Signals
+- Angular Router e HttpClient
+- Bootstrap 5 e Bootstrap Icons
+- TMDB API
+- Vitest
+
+## Struttura applicativa
+
+```text
+src/app
+├── components
+│   ├── catalogo
+│   ├── contatti
+│   ├── login
+│   ├── movie-card
+│   ├── movie-detail
+│   └── ricerca
+├── layout
+├── pages
+├── services
+│   └── movie-service.ts
+└── app.routes.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+`MovieService` centralizza l'accesso alla TMDB API attraverso `HttpClient` e restituisce `Observable` tipizzati. I componenti mantengono lo stato locale con Signals e separano catalogo, ricerca, scheda riutilizzabile e dettaglio.
 
-## Code scaffolding
+## Avvio in locale
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Requisiti
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Node.js in versione LTS
+- npm
 
 ```bash
-ng generate --help
+git clone https://github.com/fabiozagaria/LabTV.git
+cd LabTV
+npm install
+npm start
 ```
 
-## Building
+L'applicazione sarà disponibile su `http://localhost:4200`.
 
-To build the project run:
+## TMDB e sicurezza
 
-```bash
-ng build
-```
+Le richieste partono da un'applicazione eseguita nel browser. Una credenziale inserita nel bundle frontend deve quindi essere considerata pubblica: spostarla soltanto in un file `environment` Angular non la rende segreta.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Per un utilizzo reale è opportuno:
 
-## Running unit tests
+1. non committare chiavi personali;
+2. sostituire qualsiasi chiave già pubblicata;
+3. inoltrare le richieste attraverso un backend controllato, se la credenziale deve rimanere riservata.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Stato del progetto
 
-```bash
-ng test
-```
+Progetto didattico funzionante e in evoluzione. Login e autenticazione reale non sono ancora implementati.
 
-## Running end-to-end tests
+## Attribuzione
 
-For end-to-end (e2e) testing, run:
+I dati cinematografici provengono da [The Movie Database](https://www.themoviedb.org/). LabTV è un progetto educativo e non è affiliato a TMDB.
 
-```bash
-ng e2e
-```
+## Autore
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Sviluppato da [Fabio Zagaria](https://github.com/fabiozagaria).
