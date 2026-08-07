@@ -1,59 +1,77 @@
-# LabTV
+# LabTV — Catalogo cinematografico Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+Single Page Application dedicata alla scoperta di film. Integra la TMDB API per mostrare catalogo, ricerca, dettagli, cast, regista e titoli simili.
 
-## Development server
+[Demo online](https://lab-tv.vercel.app/)
 
-To start a local development server, run:
+## Competenze dimostrate
+
+- integrazione di una REST API esterna;
+- gestione asincrona dei dati con HttpClient e RxJS;
+- modelli TypeScript per risposte API tipizzate;
+- gestione degli stati di caricamento ed errore;
+- routing con parametri dinamici;
+- componenti riutilizzabili;
+- stato locale con Angular Signals.
+
+## Funzionalità
+
+- catalogo di film recuperato dalla TMDB API;
+- ricerca locale per titolo;
+- pagina di dettaglio del film;
+- visualizzazione di cast e regista;
+- suggerimenti di film simili;
+- messaggi dedicati per caricamento ed errore;
+- navigazione tra home, catalogo, ricerca, contatti e dettaglio.
+
+## Tecnologie
+
+- Angular 21
+- TypeScript 5.9
+- RxJS
+- Angular Signals
+- Angular Router
+- Angular HttpClient
+- Bootstrap 5 e Bootstrap Icons
+- TMDB API
+- Vitest come test runner configurato
+
+## Architettura
+
+`MovieService` centralizza le chiamate HTTP e restituisce `Observable` tipizzati. I componenti separano catalogo, ricerca, card e dettaglio; Signals mantiene lo stato locale dell'interfaccia.
+
+Le rotte principali sono definite in `app.routes.ts`, mentre i modelli condivisi descrivono film, crediti e risposte della API.
+
+## Avvio in locale
+
+### Requisiti
+
+- Node.js in versione LTS
+- npm
 
 ```bash
-ng serve
+git clone https://github.com/fabiozagaria/labtv-angular.git
+cd labtv-angular
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+L'applicazione sarà disponibile su `http://localhost:4200`.
 
-## Code scaffolding
+## Nota architetturale sulle credenziali
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+In una SPA, ogni configurazione inclusa nel bundle è accessibile dal browser. In un'applicazione production-ready, le chiamate che richiedono credenziali riservate dovrebbero essere mediate da un backend controllato.
 
-```bash
-ng generate component component-name
-```
+## Limiti attuali
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- il progetto è esclusivamente frontend;
+- la pagina di login è dimostrativa e non implementa autenticazione reale;
+- non è presente persistenza utente.
 
-```bash
-ng generate --help
-```
+## Attribuzione
 
-## Building
+I dati cinematografici sono forniti da [The Movie Database](https://www.themoviedb.org/). LabTV è un progetto educativo e non è affiliato a TMDB.
 
-To build the project run:
+## Autore
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Fabio Zagaria — progetto Angular realizzato durante il percorso LabForWeb.
