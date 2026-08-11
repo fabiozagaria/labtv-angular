@@ -4,6 +4,10 @@ Single Page Application dedicata alla scoperta di film. Integra la TMDB API per 
 
 [Demo online](https://lab-tv.vercel.app/)
 
+## Stato del progetto
+
+**Sospeso temporaneamente.** Lo sviluppo riprenderà dopo il completamento del [Gestionale Spese](https://github.com/fabiozagaria/expense-tracker-angular). La demo resta disponibile, ma LabTV non è ancora considerato concluso.
+
 ## Competenze dimostrate
 
 - integrazione di una REST API esterna;
