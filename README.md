@@ -1,12 +1,17 @@
 # LabTV — Catalogo cinematografico Angular
 
+![Versione](https://img.shields.io/badge/versione-1.0.0-blue)
+![Stato](https://img.shields.io/badge/stato-release%20stabile-brightgreen)
+
+**Versione attuale: 1.0.0 — prima release completa della SPA frontend.**
+
 Single Page Application dedicata alla scoperta di film. Integra la TMDB API per mostrare catalogo, ricerca, dettagli, cast, regista e titoli simili.
 
 [Demo online](https://lab-tv.vercel.app/)
 
 ## Stato del progetto
 
-**Sospeso temporaneamente.** Lo sviluppo riprenderà dopo il completamento del [Gestionale Spese](https://github.com/fabiozagaria/expense-tracker-angular). La demo resta disponibile, ma LabTV non è ancora considerato concluso.
+**Release 1.0.0 completata rispetto allo scope frontend.** La demo resta disponibile e il progetto non è attualmente in sviluppo attivo. Un'eventuale evoluzione con backend, profili e persistenza costituirà LabTV 2.x.
 
 ## Competenze dimostrate
 
@@ -71,6 +76,16 @@ In una SPA, ogni configurazione inclusa nel bundle è accessibile dal browser. I
 - il progetto è esclusivamente frontend;
 - la pagina di login è dimostrativa e non implementa autenticazione reale;
 - non è presente persistenza utente.
+
+Questi limiti definiscono lo scope della release frontend 1.0.0 e non impediscono l'utilizzo delle funzionalità principali di catalogo, ricerca e dettaglio.
+
+## Versioning
+
+Il progetto segue [Semantic Versioning](https://semver.org/):
+
+- `1.0.x`: correzioni compatibili della release attuale;
+- `1.x.0`: nuove funzionalità frontend compatibili;
+- `2.0.0`: evoluzione architetturale con backend e funzionalità utente persistenti.
 
 ## Attribuzione
 
