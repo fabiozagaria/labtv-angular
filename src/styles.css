@@ -1,8 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
-@import "bootstrap-icons/font/bootstrap-icons.css";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+/* Accessible theme switch, available outside the mobile navigation. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-inline: 0.5rem;
+}
+.theme-toggle:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+html[data-theme='dark'] {
+  --bs-body-bg: #10141d;
+  --bs-body-color: #e8eef8;
+}
+html[data-theme='dark'] .bg-light {
+  background-color: #1a2230 !important;
+}
+html[data-theme='dark'] a.text-dark {
+  color: #e8eef8 !important;
+}
+html[data-theme='dark'] .bg-white {
+  background-color: #1a2230 !important;
+}
+.navbar .theme-toggle {
+  color: #f8f9fa;
 }

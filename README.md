@@ -94,3 +94,7 @@ I dati cinematografici sono forniti da [The Movie Database](https://www.themovie
 ## Autore
 
 Fabio Zagaria — progetto Angular realizzato durante il percorso LabForWeb.
+
+## Tema della pagina
+
+Il pulsante sole/luna nella navigazione alterna tema chiaro e scuro. Al primo accesso segue il dispositivo; la scelta manuale viene ricordata nel browser.

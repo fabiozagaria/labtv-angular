@@ -17,3 +17,6 @@ Release frontend 1.0.0 completata rispetto allo scope dichiarato. Il progetto no
 
 ## Punto di ripresa
 Nessun passo attivo. Un backend, profili o persistenza devono essere trattati come una nuova evoluzione LabTV 2.x, non come correzioni mancanti della 1.0.0.
+
+## Tema UI — 2026-10-02
+Pulsante sole/luna accessibile nell’intestazione, tema coerente con i colori esistenti e scelta ricordata nel browser.
