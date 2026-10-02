@@ -11,7 +11,7 @@ Single Page Application dedicata alla scoperta di film. Integra la TMDB API per 
 
 ## Stato del progetto
 
-**Release 1.0.0 completata rispetto allo scope frontend.** La demo resta disponibile e il progetto non è attualmente in sviluppo attivo. Un'eventuale evoluzione con backend, profili e persistenza costituirà LabTV 2.x.
+**Release 1.0.0 completata rispetto allo scope frontend.** La demo resta disponibile e il progetto non è attualmente in sviluppo attivo. Gli interventi correnti sono di manutenzione mirata. Un'eventuale evoluzione con backend, profili e persistenza costituirà LabTV 2.x, da scegliere come fase separata: non è lavoro mancante della release frontend.
 
 ## Competenze dimostrate
 
